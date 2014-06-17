@@ -2,7 +2,7 @@
 
 # Description: A program that automates submission of CA Service Desk tickets for PCI vulnerability remediation with Qualys.
 # Author: Mark Alvarez
-# Creation date: Aug. 2 2013 - Completed on: June 15, 2014
+# Creation date: Aug. 2, 2013 - Last Update: June 15, 2014
 
 
 
