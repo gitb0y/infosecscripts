@@ -1,4 +1,6 @@
 #!/usr/bin/perl
+# A program that retrieves Firewall NAT Entries and F5 Server Pool entries from Infoblox
+# Author: Mark Jayson R. Alvarez
 
 use 5.010;
 use strict;
