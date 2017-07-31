@@ -6,7 +6,7 @@
 # Description: A program that finds outlook emails based on search pattern and  #
 # moves them to specified folder(s).                                            #
 #                                                                               #
-# Usage: #perl find_emails.pl                                                   #
+# Usage: #perl outlookfinder.pl                                                   #
 #                                                                               #
 #    Copyright (C) <2014>  <Mark Jayson R. Alvarez>                             #
 #                                                                               #

@@ -4,7 +4,7 @@
 #                                                                               #
 # Description: A program that retrieves Firewall NAT Entries and F5 Server Pool #
 # entries from Infoblox.                                                        #                                                   
-# Usage: #perl search_infoblox.pl                                               #
+# Usage: #perl vipextractor.pl                                                  #
 #                                                                               #
 #    Copyright (C) <2014>  <Mark Jayson R. Alvarez>                             #
 #                                                                               #

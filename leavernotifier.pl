@@ -4,7 +4,7 @@
 #                                                                               #
 # Description: A program that sends out notification emails to managers of      #
 # terminated employees.                                                         #                                               
-# Usage: #perl nle_notification.pl                                              #
+# Usage: #perl leavernotifier.pl                                                #
 #                                                                               #
 #    Copyright (C) <2014>  <Mark Jayson R. Alvarez>                             #
 #                                                                               #

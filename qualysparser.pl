@@ -6,7 +6,7 @@
 # for PCI vulnerability remediation with Qualys.                                #
 # Author: Mark Jayson R. Alvarez (mark.alvarez123@gmail.com)                    #
 # Creation date: Aug. 2 2013                                                    #
-# Usage: #perl submit_ticket.pl                                                 #
+# Usage: #perl qualysparser.pl                                                  #
 #                                                                               #
 #    Copyright (C) <2014>  <Mark Jayson R. Alvarez>                             #
 #                                                                               #
