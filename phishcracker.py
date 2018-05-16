@@ -204,6 +204,10 @@ def parse_email(fullfilename, reporter):
         print "       ",
     else:
         print "\n\n"
+    phishrecipients = mailattachment.Recipients
+    for recipient in phishrecipients:
+        print "\n\nSent to: ",
+	print recipient.Fields(0x39FE001E).encode('utf-8').strip()
     print "Subject: \"" + phishsubject.encode('UTF8') + "\""
     if reporter != "msg_file": print "       ",
     print "Date Sent: " + str(mailattachment.SentOn)
@@ -440,6 +444,18 @@ def parse_email(fullfilename, reporter):
             if reporter != "msg_file": print "            ",
             print " " + url[0:70]
             embedded_links.writelines(url + "\n")
+    
+    phish_attachments = mailattachment.Attachments
+    att = [attachment for attachment in phish_attachments]
+
+    for attachment in att:
+        attfullfilename = os.path.join(stagingdir, attachment.FileName)
+        if args.verbose: print ">>> Saving attachment into " + attfullfilename.encode('UTF8') + "..."
+        if not os.path.isfile(attfullfilename):
+            try:
+                attachment.SaveAsFile(attfullfilename)
+            except pywintypes.com_error:
+                attachment.SaveAsFile(attfullfilename)
                 
 
 
