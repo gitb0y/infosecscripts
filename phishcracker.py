@@ -206,8 +206,11 @@ def parse_email(fullfilename, reporter):
         print "\n\n"
     phishrecipients = mailattachment.Recipients
     for recipient in phishrecipients:
-        print "\n\nSent to: ",
-	print recipient.Fields(0x39FE001E).encode('utf-8').strip()
+	if(recipient.Fields(0x39FE001E)):
+	        print "\n\nSent to: ",
+		print recipient.Fields(0x39FE001E).encode('utf-8').strip()
+	else:
+		print "\n\nSent to: " + recipient.Address
     print "Subject: \"" + phishsubject.encode('UTF8') + "\""
     if reporter != "msg_file": print "       ",
     print "Date Sent: " + str(mailattachment.SentOn)
