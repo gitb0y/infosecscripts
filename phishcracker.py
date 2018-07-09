@@ -43,8 +43,10 @@ import zlib
 import json
 import time
 import sys
+import ssl
 import re
 import os
+
 
 
 #########################
@@ -69,6 +71,9 @@ parser.add_argument('-f', '--flagged', help='Skip non-flagged messages.', action
 args = parser.parse_args()
 
 
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
 
 
 ### IF INPUT IS NOT AN MSG FILE OR A FOLDER, LAUNCH OUTLOOK APP
@@ -291,7 +296,7 @@ def parse_email(fullfilename, reporter):
         x_originating_ip = x_originating_ip.group(1)
         if args.location_search:
             if reporter != "msg_file": print "       ",
-            print "X-Originating-IP: " + x_originating_ip + " - " + urllib2.urlopen(r'http://ipinfo.io/' + x_originating_ip + '/country').read().strip()
+            print "X-Originating-IP: " + x_originating_ip + " - " + urllib2.urlopen(r'http://ipinfo.io/' + x_originating_ip + '/country', context=ctx).read().strip()
         else:
             if reporter != "msg_file": print "       ",
             print "X-Originating-IP: " + x_originating_ip
