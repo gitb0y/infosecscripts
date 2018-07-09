@@ -338,7 +338,7 @@ def parse_email(fullfilename, reporter):
         if ip != "none":
             if args.location_search: ### DETERMINE IP LOCATION
                 if ipaddress.IPv4Address(unicode(ip)).is_private == False:
-                    country = urllib2.urlopen(r'http://ipinfo.io/' + ip + '/country').read().strip()
+                    country = urllib2.urlopen(r'http://ipinfo.io/' + ip + '/country', context=ctx).read().strip()
                     if reporter != "msg_file": print "            ",
                     print " " + str(hopcount) + ". " + hostname + "(" + ip + " - " + country + ")"
                 else:
